@@ -4,18 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/stylesheets/style.css' />
     <title>Express-Dev-Skills</title>
 </head>
 <body>
     <h1>Developer Skills</h1>
+
     <ul>
         <% skills.forEach(skill => { %>
          <li>
-             <%= skill.skill %>
+             <a href="/skills/<%= skill.id %>"><%= skill.skill %></a>
              -
              <%= skill.obtained ? 'Learned' : 'Need to learn' %> 
          </li>
         <% }) %>
     </ul>
+
+    <!-- Need to include Add Skill link-->
+    <a href="/skills/new">Add a New Skill</a>
+
 </body>
 </html>
